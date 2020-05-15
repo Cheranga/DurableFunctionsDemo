@@ -8,16 +8,10 @@ trigger:
 
 pool:
   vmImage: 'windows-latest'
-
-variables:
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
-
 steps:
 - script: |
-    dotnet restore
-    dotnet build --configuration Release
+   dotnet restore
+   dotnet build --configuration Release
 - task: DotNetCoreCLI@2
   inputs:
     command: publish
